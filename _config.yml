@@ -3,6 +3,9 @@ description: Portfolio of Game Engineer
 baseurl: "" 
 url: "https://sakai8121.github.io"
 collections:
+  research:
+      output: true
+      permalink: /research/:title/
   games:
     output: true
     permalink: /games/:path/
