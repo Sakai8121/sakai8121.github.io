@@ -47,7 +47,7 @@ title: Home
 
 <section id="projects">
   <div class="container">
-    <h2 class="fw-bold mb-4">開発実績</h2>
+    <h2 class="fw-bold mb-4">開発実績 <span class="fs-5 text-muted fw-normal">（注力順）</span></h2>
     <div class="row g-4">
       {% for game in site.games %}
       <div class="col-md-6 col-lg-4">
@@ -61,7 +61,7 @@ title: Home
               <span class="badge bg-secondary me-1">{{ tag }}</span>
               {% endfor %}
             </div>
-            <a href="{{ game.url | relative_url }}" class="btn btn-primary mt-auto">詳細を見る</a>
+            <a href="{{ site.baseurl }}{{ game.url }}" class="btn btn-primary mt-auto">詳細を見る</a>
           </div>
         </div>
       </div>
