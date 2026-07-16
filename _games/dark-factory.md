@@ -2,7 +2,7 @@
 layout: game
 title: "DarkFactory"
 order: 20
-summary: "査察官から違法アイテムを隠避するオンライン協力型ステルス工場シミュレーション"
+summary: "Steamでのリリースを目指す。UE製オンライン協力Friendslopゲームの開発"
 thumbnail: "assets/images/games/DarkFactory_thumbnail.png"
 period: "制作中 (大学4年夏ごろから)"
 role: "チーム制作 (メインプログラマー / 企画)"
