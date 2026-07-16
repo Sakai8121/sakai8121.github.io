@@ -2,7 +2,7 @@
 layout: game
 title: "UnbelievableAntKingdom"
 order: 40
-summary: "連鎖爆発で設計図を強化して挑む、Google PlayおよびUnityRoomで公開中の新感覚パズルアクション"
+summary: "連鎖爆発で設計図を強化して挑む、Google Playで公開中の新感覚パズルアクション"
 thumbnail: "assets/images/games/UnbelievableAntKingdom_thumbnail.png"
 period: "約1年半 (大学3年〜4年初頭)"
 role: "チーム制作 (メインプログラマー / 企画)"
