@@ -4,7 +4,7 @@
   status: "read"
   cover: "assets/images/books/AdaptiveCode.jpg"
   comment: |
-    C#実践開発手法。SOLID原則やデザインパターンをを学びました。大学3年生のときに先輩に勧められて呼んだが、完全に理解していない。時間があるときに読み直したい。
+    C#実践開発手法。SOLID原則やデザインパターンをを学びました。大学3年生のときに先輩に勧められて通読した。実務や個人開発での設計経験を経た今、改めて読み直したい本。
 
 - title: "ゲームフルデザイン"
   author: "Gary McLean Hall 他"
@@ -27,21 +27,21 @@
   comment: |
     プログラマーになるなら必ず読んでおくべき本を調べて読んだ。特にコメントの役割や一度に1つのタスクという考え方をできるだけ意識するようにしている。
 
-# --- これから読む・読んでいる本 (status: reading) ---
 - title: "3Dゲームを面白くする技術"
   author: "大野 功二"
   status: "reading"
   cover: "assets/images/books/3Dゲームを面白くする技術.jpg"
   comment: |
-    実例から学ぶゲームメカニクスを勉強中。
+    実例から様々なゲームメカニクスを知ることができた。遊んだことがあるゲームもあったが、そんな仕組みがあったのか！と驚くこともあり、勉強になった。
 
 - title: "Game Programming Patterns"
   author: "Robert Nystrom, 武舎広幸 他"
   status: "reading"
   cover: "assets/images/books/Game Programming Patterns.jpg"
   comment: |
-    ゲーム開発特有のデザインパターン（State, Component, Flyweightなど）を体系的に学習したい。
-
+    デザインパターンが実際にどのような場面で使われるのかが書かれていて分かりやすかった。特にデータの局所化の話は印象的で、この本を読んでECSについて調べるようになった。
+    
+# --- これから読む・読んでいる本 (status: reading) ---
 - title: "セガ基礎線形代数講座"
   author: "山中 勇毅"
   status: "reading"
