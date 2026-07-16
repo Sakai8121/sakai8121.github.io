@@ -5,16 +5,16 @@ title: Home
 
 <section id="about">
   <div class="container">
-    <h2 class="fw-bold mb-4">About Me / 自己紹介</h2>
+    <h2 class="fw-bold mb-4">自己紹介</h2>
     <div class="row align-items-center">
-      <div class="col-md-4 text-center mb-3 mb-md-0">
-        <img src="/assets/images/profile.png" alt="Profile" class="rounded-circle img-fluid" style="max-width: 200px;">
-      </div>
       <div class="col-md-8">
-        <h3>名前（必要に応じて記載）</h3>
-        <p class="text-muted">肩書や専攻など</p>
+        <h3 class="fw-bold">酒井 瑛士</h3>
+        <p class="text-muted">埼玉大学大学院1年生 / ゲーム制作サークルSGP / 岩崎研究室</p>
         <p>
-          ここに短い自己紹介文を記載します。
+          大学1年生からさまざまなジャンル・規模のゲーム制作に取り組んでいます。ゲームプログラマー志望です！
+          ゲーム開発では、企画や実装で生まれた課題を試行錯誤しながら解決し、ゲームがより面白くなったと実感できる瞬間が一番好きです。
+          特に、プレイヤーの操作感や手触りを磨き、「動かしていて気持ちいい」と感じてもらえるゲームを作ることにやりがいを感じています。
+          将来は、ゲームの持つポテンシャルを最大限に引き出し、常にプレイヤーの期待を超える体験を届けられるゲームプログラマーを目指しています。
         </p>
       </div>
     </div>
@@ -23,25 +23,32 @@ title: Home
 
 <section id="research">
   <div class="container">
-    <h2 class="fw-bold mb-4">Research / 研究活動</h2>
-    <div class="card p-4">
-      <h4 class="card-title fw-bold">研究テーマ：ここに研究タイトル</h4>
-      <p class="card-text">
-        研究の概要、アプローチ、成果などを分かりやすく説明します。
-        （例：CG表現の精度向上における手法の提案、センサデータの収集フェーズにおける効率的なアプローチなど、強調したい成果を記載します。）
-      </p>
+    <h2 class="fw-bold mb-4">研究活動</h2>
+    <div class="row g-4">
+      {% for res in site.research %}
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm border-start border-success border-4 h-100">
+          <h4 class="fw-bold mb-2">{{ res.title }}</h4>
+          <span class="text-muted mb-3">{{ res.period }}</span>
+          <p class="card-text flex-grow-1">{{ res.summary }}</p>
+          <div class="mt-3">
+            <a href="{{ res.url | relative_url }}" class="btn btn-outline-success btn-sm">研究の詳細を見る</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="container">
-    <h2 class="fw-bold mb-4">Projects / 開発実績一覧</h2>
+    <h2 class="fw-bold mb-4">開発実績</h2>
     <div class="row g-4">
       {% for game in site.games %}
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm">
-          <img src="{{ game.thumbnail | default: '/assets/images/default-thumbnail.png' }}" class="card-img-top" alt="{{ game.title }}">
+          <img src="{{ game.thumbnail | default: '/assets/images/placeholder.png' }}" class="card-img-top" alt="{{ game.title }}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title fw-bold">{{ game.title }}</h5>
             <p class="card-text text-muted flex-grow-1">{{ game.summary }}</p>
@@ -50,12 +57,7 @@ title: Home
               <span class="badge bg-secondary me-1">{{ tag }}</span>
               {% endfor %}
             </div>
-            <div class="d-grid gap-2">
-              <a href="{{ game.url | relative_url }}" class="btn btn-primary btn-sm">詳細を見る</a>
-              {% if game.play_url %}
-              <a href="{{ game.play_url }}" target="_blank" class="btn btn-outline-secondary btn-sm">プレイする (外部サイト)</a>
-              {% endif %}
-            </div>
+            <a href="{{ game.url | relative_url }}" class="btn btn-primary mt-auto">詳細を見る</a>
           </div>
         </div>
       </div>
@@ -66,19 +68,19 @@ title: Home
 
 <section id="work">
   <div class="container">
-    <h2 class="fw-bold mb-4">Work Experience / 職歴・実務経験</h2>
+    <h2 class="fw-bold mb-4">職務経歴</h2>
     <div class="row g-4">
       {% for item in site.work %}
       <div class="col-12">
-        <div class="card p-4 shadow-sm">
+        <div class="card p-4 shadow-sm border-start border-primary border-4">
           <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
             <h4 class="fw-bold mb-0">{{ item.company }}</h4>
             <span class="text-muted">{{ item.period }}</span>
           </div>
           <h5 class="text-primary">{{ item.role }}</h5>
-          <p class="card-text text-muted">{{ item.summary }}</p>
+          <p class="card-text mt-2">{{ item.summary }}</p>
           <div>
-            <a href="{{ item.url | relative_url }}" class="btn btn-outline-primary btn-sm">詳細・取り組みを見る</a>
+            <a href="{{ item.url | relative_url }}" class="btn btn-outline-primary btn-sm">実務での取り組みを見る</a>
           </div>
         </div>
       </div>
@@ -89,40 +91,35 @@ title: Home
 
 <section id="timeline">
   <div class="container">
-    <h2 class="fw-bold mb-4">Timeline / 来歴</h2>
-    <div class="list-group list-group-flush">
-      <div class="list-group-item d-flex justify-content-between align-items-start py-3">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">〇〇大学院 〇〇専攻 入学</div>
-          ここに学歴や活動開始などの詳細。
-        </div>
-        <span class="badge bg-primary rounded-pill">202X年 〇月</span>
-      </div>
-      <div class="list-group-item d-flex justify-content-between align-items-start py-3">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">〇〇学会 発表・出展</div>
-          発表タイトルや受賞実績など。
-        </div>
-        <span class="badge bg-primary rounded-pill">202X年 〇月</span>
-      </div>
-    </div>
+    <h2 class="fw-bold mb-4">来歴</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item py-3">
+        <div class="fw-bold">2022年4月 - 埼玉大学 工学部 情報工学科　入学</div>
+      </li>
+      <li class="list-group-item py-3">
+        <div class="fw-bold">2026年3月 - 埼玉大学 工学部 情報工学科　卒業 学士取得</div>
+      </li>
+      <li class="list-group-item py-3">
+        <div class="fw-bold">2026年4月 - 埼玉大学大学院 理工学研究科 数理電子情報専攻　入学</div>
+      </li>
+    </ul>
   </div>
 </section>
 
 <section id="hobbies">
   <div class="container">
-    <h2 class="fw-bold mb-4">Hobbies & Books / その他</h2>
+    <h2 class="fw-bold mb-4">その他（趣味・読書）</h2>
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h4 class="fw-bold mb-3">Hobbies & Interests</h4>
-          <p>趣味やプライベートで関心のある活動を記載します。</p>
+        <div class="card p-4 h-100 shadow-sm">
+          <h4 class="fw-bold mb-3">趣味</h4>
+          <p>趣味などを記載します。</p>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card p-4 h-100">
-          <h4 class="fw-bold mb-3">BooksRead</h4>
-          <p>読んだ本や、学習した技術書などの記録・推薦を記述します。</p>
+        <div class="card p-4 h-100 shadow-sm">
+          <h4 class="fw-bold mb-3">読書記録</h4>
+          <p>読んだ本を記載します。</p>
         </div>
       </div>
     </div>
