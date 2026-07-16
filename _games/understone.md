@@ -1,7 +1,7 @@
 ---
 layout: game
 title: "宇宙の果てでも石をめくる"
-order: 70
+order: 90
 summary: "短期間でのビルドアップと成長曲線設計に挑んだ、Unity1Week2Dアクション"
 thumbnail: "assets/images/games/understone_thumbnail.png"
 period: "1週間 (Unity1Week)"
