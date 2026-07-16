@@ -106,22 +106,89 @@ title: Home
   </div>
 </section>
 
-<section id="hobbies">
+<section id="hobbies" class="bg-light">
   <div class="container">
-    <h2 class="fw-bold mb-4">その他（趣味・読書）</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-4 h-100 shadow-sm">
-          <h4 class="fw-bold mb-3">趣味</h4>
-          <p>趣味などを記載します。</p>
+    <h2 class="fw-bold mb-5 text-center">その他（読書・趣味）</h2>
+
+    <div class="mb-5">
+      <h3 class="fw-bold fs-4 mb-4 text-primary">
+        <i class="fas fa-book-reader me-2"></i>読書記録 
+        <span class="fs-6 text-muted fw-normal">（技術力・ゲーム開発力向上のためのインプット）</span>
+      </h3>
+      
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for book in site.data.books %}
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="row g-0 h-100">
+              <div class="col-4 col-sm-3 bg-light d-flex align-items-center justify-content-center p-2 rounded-start">
+                <img src="{{ site.baseurl }}/{{ book.cover }}" class="img-fluid rounded shadow-sm" alt="{{ book.title }}" style="max-height: 140px; object-fit: contain;">
+              </div>
+              <div class="col-8 col-sm-9">
+                <div class="card-body py-3">
+                  <div class="d-flex justify-content-between align-items-start mb-1">
+                    <h5 class="card-title fw-bold mb-0 text-dark" style="font-size: 1rem; line-height: 1.3;">{{ book.title }}</h5>
+                    {% if book.status == 'read' %}
+                      <span class="badge bg-success ms-2 flex-shrink-0">読了</span>
+                    {% else %}
+                      <span class="badge bg-warning text-dark ms-2 flex-shrink-0">学習中</span>
+                    {% endif %}
+                  </div>
+                  <p class="card-text text-muted small mb-2">{{ book.author }}</p>
+                  <p class="card-text small text-secondary mb-0" style="font-size: 0.85rem; line-height: 1.5;">
+                    {{ book.comment | newline_to_br }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        {% endfor %}
       </div>
-      <div class="col-md-6">
-        <div class="card p-4 h-100 shadow-sm">
-          <h4 class="fw-bold mb-3">読書記録</h4>
-          <p>読んだ本を記載します。</p>
+    </div>
+
+    <div>
+      <h3 class="fw-bold fs-4 mb-4 text-primary">
+        <i class="fas fa-heart me-2"></i>趣味・関心
+      </h3>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+              <div class="fs-1 text-primary mb-3"><i class="fas fa-gamepad"></i></div>
+              <h5 class="card-title fw-bold mb-2">ゲーム</h5>
+              <p class="card-text small text-muted mb-0" style="line-height: 1.6;">
+                プレイするのも作るのも大好きです。意識的にインディーからAAAまでジャンル問わず幅広く遊ぶようにしています。<br>
+                ゲームを作るときにあのゲームのあの演出、操作感が良かったから参考にしようということが増え、より良いゲームが作れるようになったと感じています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+              <div class="fs-1 text-primary mb-3"><i class="fas fa-book-open"></i></div>
+              <h5 class="card-title fw-bold mb-2">漫画</h5>
+              <p class="card-text small text-muted mb-0" style="line-height: 1.6;">
+                予想をいい意味で裏切られるストーリー展開や、特徴的なキャラクター設定に惹かれます。<br>
+                王道ジャンプ系作品や漫画アプリで配信される読み切りやインディー作品などを読みます、構成や演出の引き出しとして吸収もしています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+              <div class="fs-1 text-primary mb-3"><i class="fas fa-headset"></i></div>
+              <h5 class="card-title fw-bold mb-2">配信視聴</h5>
+              <p class="card-text small text-muted mb-0" style="line-height: 1.6;">
+                ゲーム実況の配信を好んで視聴します。編集が入っていないプレイヤーの「リアルな反応」を観察できるため、プレイヤーがどこで熱狂し、どこで躓くかを分析する客観的UX研究の側面もあります。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
