@@ -2,3 +2,10 @@ title: Sakai Portfolio
 description: Portfolio of Game Engineer
 baseurl: "" 
 url: "https://sakai8121.github.io"
+collections:
+  games:
+    output: true
+    permalink: /games/:path/
+  work:
+    output: true
+    permalink: /work/:path/
