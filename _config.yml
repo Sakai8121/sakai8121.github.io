@@ -1,6 +1,6 @@
 title: Sakai Portfolio
 description: Portfolio of Game Engineer
-baseurl: "" 
+baseurl: "/portfolio-v2"
 url: "https://sakai8121.github.io"
 collections:
   research:
