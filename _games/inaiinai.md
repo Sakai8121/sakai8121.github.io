@@ -1,7 +1,7 @@
 ---
 layout: game
 title: "いないいないばあの達人"
-order: 100
+order: 80
 summary: "MVPアーキテクチャとUniRxの導入、保守性の高いコード設計にフォーカスした制作"
 thumbnail: "assets/images/games/いないいないばあの達人_thumbnail.png"
 period: "1週間 (大学3年 年末)"
