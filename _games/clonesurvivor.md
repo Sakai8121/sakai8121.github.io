@@ -1,7 +1,7 @@
 ---
 layout: game
 title: "分身サバイバー"
-order: 80
+order: 100
 summary: "「分身＝攻撃力増加×被弾範囲拡大」のリスク・リターン設計からゲームデザインの本質に迫った意欲作"
 thumbnail: "assets/images/games/clonesurvivor_thumbnail.png"
 period: "1週間 (Unity1Week)"
