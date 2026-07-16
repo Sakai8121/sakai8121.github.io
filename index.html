@@ -1,236 +1,130 @@
 ---
-layout: null
+layout: default
+title: Home
 ---
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Portfolio | {{ site.title }}</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
 
-    <header class="hero">
-    <div class="container">
-        <h1 class="glitch" data-text="GAME PORTFOLIO">GAME PORTFOLIO</h1>
-        <p class="subtitle">Game Developer</p>
-        
-        <div class="social-links">
-            <a href="https://github.com/sakai8121" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            
-            <a href="https://x.com/HonestHukurou" target="_blank" title="X (Twitter)">
-                <i class="fab fa-x-twitter"></i>
-            </a>
+<section id="about">
+  <div class="container">
+    <h2 class="fw-bold mb-4">About Me / 自己紹介</h2>
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img src="/assets/images/profile.png" alt="Profile" class="rounded-circle img-fluid" style="max-width: 200px;">
+      </div>
+      <div class="col-md-8">
+        <h3>名前（必要に応じて記載）</h3>
+        <p class="text-muted">肩書や専攻など</p>
+        <p>
+          ここに短い自己紹介文を記載します。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <a href="mailto:syoujikinahukurou@gmail.com" title="Contact">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
+<section id="research">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Research / 研究活動</h2>
+    <div class="card p-4">
+      <h4 class="card-title fw-bold">研究テーマ：ここに研究タイトル</h4>
+      <p class="card-text">
+        研究の概要、アプローチ、成果などを分かりやすく説明します。
+        （例：CG表現の精度向上における手法の提案、センサデータの収集フェーズにおける効率的なアプローチなど、強調したい成果を記載します。）
+      </p>
+    </div>
+  </div>
+</section>
 
-        <div class="profile-summary">
-            <p>
-                大学1年生から様々なゲームを作っています！プログラマー志望です！<br>
-                ゲーム開発全体の醍醐味は、想像したことを実際に具現化できること！<br>
-                プログラマーの醍醐味は、手触りを良くして当初の期待を超えるところ！<br>
-                プログラマー志望ですが、開発中に出てくる課題を良いアイディアで解決するところも大好きです！
-            </p>
-        </div>
-
-            <div class="skills">
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">UnrealEngine</span>
-                <span class="skill-tag">C++</span>
+<section id="projects">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Projects / 開発実績一覧</h2>
+    <div class="row g-4">
+      {% for game in site.games %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ game.thumbnail | default: '/assets/images/default-thumbnail.png' }}" class="card-img-top" alt="{{ game.title }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">{{ game.title }}</h5>
+            <p class="card-text text-muted flex-grow-1">{{ game.summary }}</p>
+            <div class="mb-3">
+              {% for tag in game.tags %}
+              <span class="badge bg-secondary me-1">{{ tag }}</span>
+              {% endfor %}
             </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <h2 class="section-title">WORKS</h2>
-        
-        <div class="game-grid">
-            {% for game in site.data.games %}
-            <article class="game-card">
-                <div class="card-image">
-                    <img src="{{ game.thumbnail }}" alt="{{ game.title }}">
-                    <div class="card-overlay">
-                        <a href="{{ game.url }}" target="_blank" class="play-btn">
-                            {% if game.action_label %}
-                                {{ game.action_label }}
-                            {% elsif game.download_required %}
-                                Download
-                            {% else %}
-                                Play Now
-                            {% endif %}
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="card-content">
-                    <div class="card-header">
-                        <h3>{{ game.title }}</h3>
-                        <span class="dev-period">{{ game.period }}</span>
-                    </div>
-
-                    <div class="role-info">
-                        <i class="fas fa-user-tag"></i> {{ game.role }}
-                    </div>
-                    
-                    <div class="tech-stack">
-                        {% for tech in game.tech_stack %}
-                        <span class="tech-badge">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
-
-                    {% if game.sub_links %}
-                    <div class="sub-links">
-                        {% for link in game.sub_links %}
-                        <a href="{{ link.url }}" target="_blank" class="sub-link-btn">
-                            {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
-                            {{ link.label }}
-                        </a>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-
-                    <p class="description">{{ game.description }}</p>
-
-                    {% if game.screenshot_base and game.screenshot_count %}
-                    <div class="screenshot-gallery">
-                        {% for i in (1..game.screenshot_count) %}
-                            <img src="{{ game.screenshot_base }}{{ i }}{{ game.screenshot_ext }}" alt="screenshot {{ i }}" loading="lazy">
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    <div class="learning-point">
-                        <h4>LEARNING & FEEDBACK</h4>
-                        <div class="learning-text collapsed">
-                            {{ game.learning | markdownify }}
-                        </div>
-                        <button class="read-more-btn" onclick="toggleLearning(this)">
-                            <span class="btn-text">続きを読む</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
-        </div>
-
-        <h2 class="section-title">BOOKS READ</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: var(--text-sub);">
-                技術力向上のために読んだ本と、そこからの学び
-            </p>
-    
-            <div class="book-grid">
-                {% for book in site.data.books %}
-                    {% if book.status == 'read' %}
-                    <div class="book-card">
-                        <div class="book-cover">
-                            <img src="{{ book.cover }}" alt="{{ book.title }}">
-                        </div>
-                        <div class="book-info">
-                            <h4>{{ book.title }}</h4>
-                            <span class="book-author">{{ book.author }}</span>
-                            <p class="book-comment">{{ book.comment | newline_to_br }}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
+            <div class="d-grid gap-2">
+              <a href="{{ game.url | relative_url }}" class="btn btn-primary btn-sm">詳細を見る</a>
+              {% if game.play_url %}
+              <a href="{{ game.play_url }}" target="_blank" class="btn btn-outline-secondary btn-sm">プレイする (外部サイト)</a>
+              {% endif %}
             </div>
-    
-            <h2 class="section-title" style="margin-top: 60px;">READING LIST</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: var(--text-sub);">
-                現在学習中、または次に読む予定の技術書
-            </p>
-    
-            <div class="book-grid">
-                {% for book in site.data.books %}
-                    {% if book.status == 'reading' %}
-                    <div class="book-card reading-card"> <div class="book-cover">
-                            <img src="{{ book.cover }}" alt="{{ book.title }}">
-                            <div class="reading-badge">Reading</div>
-                        </div>
-                        <div class="book-info">
-                            <h4>{{ book.title }}</h4>
-                            <span class="book-author">{{ book.author }}</span>
-                            <p class="book-comment">{{ book.comment | newline_to_br }}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-            <h2 class="section-title" style="margin-top: 60px;">HOBBIES & INTERESTS</h2>
-            <p style="text-align: center; margin-bottom: 30px; color: var(--text-sub);">
-                趣味
-            </p>
-
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3 class="hobby-title">ゲーム</h3>
-                    <p class="hobby-desc">
-                        プレイするのも作るのも大好きです。インディーゲームからAAAタイトルまで、ジャンルを問わず様々なゲームを遊びます！分析しながら遊べたらいいのだけど、いつの間にかゲームの世界に引き込まれてしまう（笑）。
-                    </p>
-                </div>
-
-                <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="hobby-title">漫画</h3>
-                    <p class="hobby-desc">
-                        特に、予想をいい意味で裏切られるストーリー展開や、特徴的なキャラクター設定が好きな要素です！ヒロアカ、ナルト、ブラッククローバーみたいな王道のジャンプ系が一番好き。
-                    </p>
-                </div>
-
-                <div class="hobby-card">
-                    <div class="hobby-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="hobby-title">配信視聴</h3>
-                    <p class="hobby-desc">
-                        ゲーム実況の配信が好きです！編集が入っていないプレイヤーのリアルな反応を見れるのがいいと思っています！特におにやさんが好き^^
-                    </p>
-                </div>
-            </div>
-    </main> 
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 sakai8121. Hosted on GitHub Pages.</p>
+          </div>
         </div>
-    </footer>
-<script>
-        function toggleLearning(button) {
-            // ボタンの親要素(learning-point)の中にあるテキストエリアを探す
-            const container = button.parentElement;
-            const textDiv = container.querySelector('.learning-text');
-            const icon = button.querySelector('i');
-            const btnText = button.querySelector('.btn-text');
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-            // クラスを切り替える（開閉）
-            textDiv.classList.toggle('collapsed');
-            
-            // ボタンの文字とアイコンを切り替える
-            if (textDiv.classList.contains('collapsed')) {
-                btnText.textContent = "続きを読む";
-                icon.className = "fas fa-chevron-down";
-            } else {
-                btnText.textContent = "閉じる";
-                icon.className = "fas fa-chevron-up";
-            }
-        }
-    </script>
-</body>
-</html>
+<section id="work">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Work Experience / 職歴・実務経験</h2>
+    <div class="row g-4">
+      {% for item in site.work %}
+      <div class="col-12">
+        <div class="card p-4 shadow-sm">
+          <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
+            <h4 class="fw-bold mb-0">{{ item.company }}</h4>
+            <span class="text-muted">{{ item.period }}</span>
+          </div>
+          <h5 class="text-primary">{{ item.role }}</h5>
+          <p class="card-text text-muted">{{ item.summary }}</p>
+          <div>
+            <a href="{{ item.url | relative_url }}" class="btn btn-outline-primary btn-sm">詳細・取り組みを見る</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Timeline / 来歴</h2>
+    <div class="list-group list-group-flush">
+      <div class="list-group-item d-flex justify-content-between align-items-start py-3">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">〇〇大学院 〇〇専攻 入学</div>
+          ここに学歴や活動開始などの詳細。
+        </div>
+        <span class="badge bg-primary rounded-pill">202X年 〇月</span>
+      </div>
+      <div class="list-group-item d-flex justify-content-between align-items-start py-3">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">〇〇学会 発表・出展</div>
+          発表タイトルや受賞実績など。
+        </div>
+        <span class="badge bg-primary rounded-pill">202X年 〇月</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Hobbies & Books / その他</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-4 h-100">
+          <h4 class="fw-bold mb-3">Hobbies & Interests</h4>
+          <p>趣味やプライベートで関心のある活動を記載します。</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4 h-100">
+          <h4 class="fw-bold mb-3">BooksRead</h4>
+          <p>読んだ本や、学習した技術書などの記録・推薦を記述します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
