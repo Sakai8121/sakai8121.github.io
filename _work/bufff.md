@@ -1,7 +1,8 @@
 ---
+layout: work
 company: 株式会社Bufff
 role: ゲームエンジニア (アルバイト)
-period: 202X年 X月 - 現在
+period: 2025年 3月 - 現在
 summary: Unityを用いたゲーム開発業務に従事。
 ---
 
