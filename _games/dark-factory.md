@@ -25,8 +25,19 @@ primary_label: "Steam Page"
 ## 2. 作品概要
 Steamでの商業リリースを前提に開発中の、闇工場シミュレーションゲームです。「実際にSteamで売れるクオリティ」と「収益化」を明確な目標として設定しています。ゲーム性は『Repo』や『Peak』のような協力プレイ作品を参考とし、友達と悪事をはたらいているようなマルチプレイ体験を目指しています。
 
-<div class="ratio ratio-16x9 my-4 rounded shadow-sm overflow-hidden">
-  <iframe src="https://www.youtube.com/embed/videoseries?list=PLfuG9F8-oQEU" title="ゲーム紹介再生リスト" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!-- 動画エリア -->
+<div class="mb-5">
+  <!-- 案内UI -->
+  <div class="d-flex justify-content-between align-items-end mb-2">
+    <h5 class="fw-bold mb-0"><i class="fas fa-play-circle me-2 text-danger"></i>開発デモ動画集</h5>
+    <span class="badge bg-dark fs-6 py-2 px-3">
+      全30本 <i class="fas fa-arrow-right mx-1"></i> プレーヤー右上の「≡」から選択
+    </span>
+  </div>
+  
+  <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden border">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLfuG9F8-oQEU" title="ゲーム紹介再生リスト" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
 
 ---
