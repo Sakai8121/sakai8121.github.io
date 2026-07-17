@@ -1,10 +1,10 @@
 # 酒井 瑛士 (Eiji Sakai) - Portfolio Website
 
-ゲームプログラマーとしてのポートフォリオサイトのソースコードです。
+ゲームプログラマーとしてのポートフォリオサイトのソースコードです。<br>
 過去の制作実績やスキルセット、取り組んでいる研究内容などをまとめています。
 
 ## 🌐 Live Site
-[https://sakai8121.github.io/](https://sakai8121.github.io/)
+[https://sakai8121.github.io/](https://sakai8121.github.io/)<br>
 ※こちらのリンクから実際のポートフォリオサイトをご覧いただけます。
 
 ## 🎮 Profile
