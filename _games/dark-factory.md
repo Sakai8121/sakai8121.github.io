@@ -25,18 +25,48 @@ primary_label: "Steam Page"
 ## 2. 作品概要
 Steamでの商業リリースを前提に開発中の、闇工場シミュレーションゲームです。「実際にSteamで売れるクオリティ」と「収益化」を明確な目標として設定しています。ゲーム性は『Repo』や『Peak』のような協力プレイ作品を参考とし、友達と悪事をはたらいているようなマルチプレイ体験を目指しています。
 
-<!-- 動画エリア -->
-<div class="mb-5">
-  <!-- 案内UI -->
-  <div class="d-flex justify-content-between align-items-end mb-2">
-    <h5 class="fw-bold mb-0"><i class="fas fa-play-circle me-2 text-danger"></i>開発デモ動画集</h5>
-    <span class="badge bg-dark fs-6 py-2 px-3">
-      全30本 <i class="fas fa-arrow-right mx-1"></i> プレーヤー右上の「≡」から選択
-    </span>
+<div class="ratio ratio-16x9 my-4 rounded shadow-sm overflow-hidden border">
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLfuG9F8-oQEU" title="ゲーム紹介再生リスト" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!-- 見どころピックアップ -->
+<p class="fw-bold mt-5 mb-3">🎬 見どころピックアップ（※その他の動画は上のプレイヤー内から確認できます）</p>
+<div class="row g-3 mb-5">
+  <div class="col-6 col-md-4">
+    <a href="https://youtu.be/M8MIkDDJqUM" target="_blank" class="text-decoration-none">
+      <img src="https://img.youtube.com/vi/M8MIkDDJqUM/mqdefault.jpg" class="img-fluid rounded border shadow-sm" alt="怠惰な調査員">
+      <p class="small text-dark fw-bold mt-2 mb-0">① 怠惰な調査員</p>
+    </a>
   </div>
-  
-  <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden border">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLfuG9F8-oQEU" title="ゲーム紹介再生リスト" frameborder="0" allowfullscreen></iframe>
+  <div class="col-6 col-md-4">
+    <a href="https://youtu.be/dOZrAGpZ_ks" target="_blank" class="text-decoration-none">
+      <img src="https://img.youtube.com/vi/dOZrAGpZ_ks/mqdefault.jpg" class="img-fluid rounded border shadow-sm" alt="調査員との会話システム">
+      <p class="small text-dark fw-bold mt-2 mb-0">② 調査員との会話システム</p>
+    </a>
+  </div>
+  <div class="col-6 col-md-4">
+    <a href="https://youtu.be/fmK-L7FXZl4" target="_blank" class="text-decoration-none">
+      <img src="https://img.youtube.com/vi/fmK-L7FXZl4/mqdefault.jpg" class="img-fluid rounded border shadow-sm" alt="調査員のラグドール化">
+      <p class="small text-dark fw-bold mt-2 mb-0">③ 調査員のラグドール化</p>
+    </a>
+  </div>
+  <div class="col-6 col-md-4">
+    <a href="https://youtu.be/Rc5PUpeg2Rc" target="_blank" class="text-decoration-none">
+      <img src="https://img.youtube.com/vi/Rc5PUpeg2Rc/mqdefault.jpg" class="img-fluid rounded border shadow-sm" alt="設置系アイテム">
+      <p class="small text-dark fw-bold mt-2 mb-0">④ 設置系アイテム</p>
+    </a>
+  </div>
+  <div class="col-6 col-md-4">
+    <a href="https://youtu.be/-H71rd-8esk" target="_blank" class="text-decoration-none">
+      <img src="https://img.youtube.com/vi/-H71rd-8esk/mqdefault.jpg" class="img-fluid rounded border shadow-sm" alt="アイテム箒">
+      <p class="small text-dark fw-bold mt-2 mb-0">⑤ アイテム箒</p>
+    </a>
+  </div>
+  <div class="col-6 col-md-4">
+    <a href="https://youtu.be/92wdTx40lAg" target="_blank" class="text-decoration-none">
+      <img src="https://img.youtube.com/vi/92wdTx40lAg/mqdefault.jpg" class="img-fluid rounded border shadow-sm" alt="裏取引システム">
+      <p class="small text-dark fw-bold mt-2 mb-0">⑥ 裏取引システム</p>
+    </a>
   </div>
 </div>
 
