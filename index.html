@@ -52,16 +52,25 @@ title: "酒井瑛士 | ポートフォリオ"
 
 <section id="projects">
   <div class="container">
-    <h2 class="fw-bold mb-4">開発実績 <span class="fs-5 text-muted fw-normal">（注力順）</span></h2>
+    <!-- 大見出し -->
+    <h2 class="fw-bold mb-4">開発実績</h2>
 
-    <!-- まとめ動画（デモリール）エリア -->
+    <!-- 動画専用の小見出し -->
+    <h5 class="fw-bold mb-3"><i class="fas fa-play-circle me-2 text-danger"></i>ゲーム紹介動画</h5>
+    
+    <!-- 動画エリア -->
     <div class="row justify-content-center mb-5">
       <div class="col-lg-10">
-        <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden border">
-          <iframe src="https://www.youtube.com/embed/7pNdBSasRxQ" title="開発実績デモリール" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="ratio ratio-16x9 shadow-sm rounded border overflow-hidden">
+          <iframe src="https://www.youtube.com/embed/7pNdBSasRxQ" title="ゲーム紹介まとめ動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </div>
+
+    <!-- リスト専用の小見出し（ここで注力順を明記して誤解を防ぐ） -->
+    <h5 class="fw-bold mb-3"><i class="fas fa-gamepad me-2"></i>制作プロジェクト <span class="fs-6 fw-normal text-muted">（注力順）</span></h5>
+    
+    <!-- ここから各ゲームのカード（{% for game in sorted_games %} など） -->
     <div class="row g-4">
       {% assign sorted_games = site.games | sort: "order" %}
       {% for game in sorted_games %}
