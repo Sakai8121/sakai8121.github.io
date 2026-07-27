@@ -51,6 +51,25 @@ title: "酒井瑛士 | ポートフォリオ"
 </section>
 
 <section id="projects">
+  <!-- トップページに置く再生ボタン -->
+  <div class="text-center mb-5">
+    <button type="button" class="btn btn-dark btn-lg px-4 rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#showreelModal">
+      <i class="fas fa-play-circle me-2"></i> デモリールを見る
+    </button>
+  </div>
+  
+  <!-- モーダル（クリックされるまで隠れている部分） -->
+  <div class="modal fade" id="showreelModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+            <iframe src="https://www.youtube.com/embed/7pNdBSasRxQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <h2 class="fw-bold mb-4">開発実績 <span class="fs-5 text-muted fw-normal">（注力順）</span></h2>
     <div class="row g-4">
