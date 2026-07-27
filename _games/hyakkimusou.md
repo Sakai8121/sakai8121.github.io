@@ -26,7 +26,7 @@ primary_label: "Unityroomでプレイ"
 プレイヤーが思い通りにキャラクターを操作でき、「移動しているだけで楽しい」と感じられる最高の手触りを最重視して制作している3Dアクションゲームです。現在は未完成であり、将来的な機能追加や継続的なアップデートを前提として開発を進めています。
 
 <div class="ratio ratio-16x9 my-4 rounded shadow-sm overflow-hidden border">
-  <iframe src="https://www.youtube.com/embed/yl5M4NSWwPY" title="ゲーム紹介動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/gJ6CFqH8CvQ" title="ゲーム紹介動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 ---
